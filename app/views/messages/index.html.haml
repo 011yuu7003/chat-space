@@ -6,10 +6,10 @@
         %p.side-header__box__user-name seo
         %ul.side-header__box__menu
           %li.side-header__box__menu__new-group
-            %a{:href => ''} 
+            =link_to "" do
               %i.fa.fa-edit
           %li.side-header__box__menu__edit-user
-            %a{:href => ''}
+            =link_to "" do
               %i.fa.fa-cog
     .groups
       .group
@@ -34,13 +34,13 @@
         %p.message__text Hellow world
 
     .form
-      %form.new_message{:id => 'new_message', :enctype => 'mutipart/form-data', :action => '',:method => 'post'}
-        %input{:name => 'utf8', :type => 'hidden', :value => ''}
-        %input{:type => 'hidden', :name => 'authenticity_token', :value => ''}
+      %form.new_message{id: 'new_message', enctype: 'mutipart/form-data', action: '',:method => 'post'}
+        %input{name: 'utf8', type: 'hidden', value: ''}
+        %input{type: 'hidden', name: 'authenticity_token', value: ''}
         .input-box
-          %input.input-box__text{:placeholder => "type a massage", :type => "text", :name => "message[content]", :id => 'message_content'}
-          %label.input-box__image{:for => "message_image"}
+          %input.input-box__text{placeholder: "type a massage", type: "text", name: "message[content]", id: 'message_content'}
+          %label.input-box__image{for: "message_image"}
             %i.fa.fa-image
-            %input.input-box__image__file{:type => "file", :name => "massage[content]", :id => "message_image"}
-          %input.submit-btn{:type => "submit", :name => "commit", :value =>"Send"}
+            %input.input-box__image__file{type: "file", name: "massage[content]", id: "message_image"}
+          %input.submit-btn{type: "submit", name: "commit", value:"Send"}
               
