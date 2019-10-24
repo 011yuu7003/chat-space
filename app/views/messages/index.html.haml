@@ -27,20 +27,14 @@
       .main-header__edit-btn Edit
 
     .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__taker seo
-          %p.message__upper-info__date 2016/09/21 06:16:55
-        %p.message__text Hellow world
+      = render @messages
 
     .form
-      %form.new_message{id: 'new_message', enctype: 'mutipart/form-data', action: '',:method => 'post'}
-        %input{name: 'utf8', type: 'hidden', value: ''}
-        %input{type: 'hidden', name: 'authenticity_token', value: ''}
+      = form_for [@group, @message] do |f|
         .input-box
-          %input.input-box__text{placeholder: "type a massage", type: "text", name: "message[content]", id: 'message_content'}
-          %label.input-box__image{for: "message_image"}
-            %i.fa.fa-image
-            %input.input-box__image__file{type: "file", name: "massage[content]", id: "message_image"}
-          %input.submit-btn{type: "submit", name: "commit", value:"Send"}
-              
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          .input-box__image
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'fa'
+              = f.file_field :image, class: 'input-box__image__file'
+          = f.submit 'Send', class: 'submit-btn'
