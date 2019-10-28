@@ -78,7 +78,7 @@
       height: calc(100vh - 290px);
       padding: 46px 40px;
       background-color: #fafafa;
-      overflow: scroll;
+      overflow: auto;
       .message{
         padding-bottom: 40px;
         &__upper-info{
@@ -121,6 +121,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
+            cursor: pointer;
             .fa{
               display: inline-block;
               font: normal normal normal 14px/1 FontAwesome;
@@ -140,6 +141,7 @@
             margin-left: 15px;
             background-color: #38aef0;
             color: white;
+            
           }
         }
     }
