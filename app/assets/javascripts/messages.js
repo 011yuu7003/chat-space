@@ -47,8 +47,7 @@ $(function(){
       
       var html = buildMessage(message)
       $('.messages').append(html)
-      $('#message_content').val('')
-      $('.input-box_image').val('')
+      $('#new_message')[0].reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       
 
