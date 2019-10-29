@@ -27,9 +27,11 @@
         %ul.main-header__left-box__member-list 
           Menbers:   
           %li.main-header__left-box__member-list__member  
-            = current_user.name
-      .main-header__edit-btn Edit
-
+          
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
+      .main-header__edit-btn 
+        =link_to 'Edit', "/groups/#{@group.id}/edit" 
     .messages
       = render @messages
 
