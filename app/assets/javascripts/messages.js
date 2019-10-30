@@ -76,7 +76,7 @@ $(function(){
 
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
   if(document.URL.match("/messages")) {
