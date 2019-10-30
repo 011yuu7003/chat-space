@@ -25,9 +25,9 @@
         %h2.main-header__left-box__current-group 
           = @group.name
         %ul.main-header__left-box__member-list 
-          Menbers:   
+          Menbers :   
           %li.main-header__left-box__member-list__member  
-          
+
             - @group.group_users.each do |group_user|
               = group_user.user.name
       .main-header__edit-btn 
