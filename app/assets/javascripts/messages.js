@@ -58,7 +58,9 @@ $(function(){
       });
   })
 
-  
+  if(document.URL.match("/messages")) {
+    setInterval(reloadMessages, 5000);
+  };
   var reloadMessages = function() {
     last_message_id = $(".message:last").data('id');
     $.ajax({
@@ -79,9 +81,7 @@ $(function(){
       alert('error');
     });
   };
-  if(document.URL.match("/messages")) {
-    setInterval(reloadMessages, 5000);
-  };
+  
   
 });
 });
