@@ -57,11 +57,10 @@ $(function(){
       $(".submit-btn").removeAttr("disabled");
       });
   })
+  
 
-  if(document.URL.match("/messages")) {
-    setInterval(reloadMessages, 5000);
-  };
   var reloadMessages = function() {
+    if(document.URL.match("/messages")) {
     last_message_id = $(".message:last").data('id');
     $.ajax({
       url: "api/messages",
@@ -81,7 +80,11 @@ $(function(){
       alert('error');
     });
   };
+  };
   
-  
+  // if(document.URL.match("/messages")) {
+    setInterval(reloadMessages, 5000);
+  // };
 });
-});
+})
+

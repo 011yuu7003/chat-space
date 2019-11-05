@@ -13,11 +13,13 @@
             =link_to edit_user_path(current_user) do
               %i.fa.fa-cog
     .groups
-      .group
-        %p.group__group-name 
-          = @group.name
-        %p.group__latest-message
-          = @group.show_last_message
+      - current_user.groups.each do |group|
+        .group
+          = link_to group_messages_path(group) do
+            %p.group__group-name 
+              = group.name
+            %p.group__latest-message
+              = group.show_last_message
 
   .chat-main
     .main-header
@@ -30,8 +32,8 @@
 
             - @group.group_users.each do |group_user|
               = group_user.user.name
-      .main-header__edit-btn 
-        =link_to 'Edit', "/groups/#{@group.id}/edit" 
+      .right-header
+        =link_to 'Edit', "/groups/#{@group.id}/edit" , class: 'main-header__edit-btn'
     .messages
       = render @messages
 
@@ -41,6 +43,6 @@
           = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
           .input-box__image
             = f.label :image, class: 'form__mask__image' do
-              = fa_icon 'picture-o', class: 'fa'
+              = fa_icon 'picture-o', class: 'fafa'
               = f.file_field :image, class: 'input-box__image__file'
           = f.submit 'Send', class: 'submit-btn'

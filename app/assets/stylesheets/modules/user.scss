@@ -47,6 +47,20 @@
       font-size: 14px;
     }
   }
+  .btn1{
+    display: inline-block;
+    height: 50px;
+    padding: 0 30px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #ccc;
+    font-size: 14px;
+  }
 
   .field {
     margin-bottom: 10px;
@@ -81,7 +95,7 @@
     border: none;
     border-radius: 2px;
   }
-
+  
   input[type='submit'] {
     float: left;
     margin-top: 20px;
